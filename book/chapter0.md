@@ -1,42 +1,42 @@
-# Introduction
+# 서론
 
 ___
 
-*Are you so excited about learning how to make games that you can't be bothered reading my boring introduction? I understand, go ahead and skip this if you want. Good luck!*
+*게임을 만드는 법을 배우기 이전부터 너무 신나있어서 저(Sheepolution)의 지루한 서론을 읽는 것도 못 참으시겠다고요? 물론, 원한다면 여길 건너뛰어도 좋습니다. 잘 해보세요!*
+___
+
+**How to LÖVE**에 오신 것을 환영합니다. 이 자습서는 제가(Sheepolution) 썼고, 여러분에게 LÖVE(Love2D로 알려져 있는)로 게임을 프로그래밍하는 방법을 가르쳐드릴 것입니다. 제가 프로그래밍을 처음 배우기 시작했을 때, 접할 수 있었으면 하는 바램이 있는 자습서 입니다.
+
+이 자습서는 프로그래밍을 배우고 싶은 사람들을 위한 것입니다. 물론, 게임을 만들기 위해 프로그래밍을 배워야 하는 것은 아닙니다. 그 이후에도 개발에 손 대지 않고 게임을 만드시고 싶으시다면, Construct 2나 게임메이커와 같은 도구를 사용하는 것을 권장합니다.
+
+이 자습서에서 우리는 LÖVE를 사용할 것입니다. 그 이유로서, LÖVE는 게임 프로그래밍에 있어서 매우 입문자 친화적이면서도 전문적인 게임을 만들 수 있는 기능을 제공합니다. 이는 입문자나 경험자 모두에게 좋은 도구가 될 것입니다. [LÖVE로 만들어진 게임 목록](https://store.steampowered.com/curator/32659238-L%C3%96VE-Games/)
+
+게임메이커 또는 유니티와는 다르게, LÖVE는 프레임워크지 게임 엔진이 아닙니다. 코드로 모든 것을 해야합니다. 여긴 내장된 레벨 에디터 같은 것들은 주어지지 않습니다. 대신에 이점으로는, 직접 작성한 코드이기 때문에 게임에서 어떤 일이 일어나는지 그리고 어떻게 작동하는지 정확히 이해할 수 있습니다. 또, 배운 내용을 다른 엔진과 프레임워크에 적용하기가 더 쉽습니다. 왜냐하면 엔진과 프레임워크가 서로 달라도, 코드는 언제나 똑같이 작동하기 때문입니다.
+
+이 자습서는 프로그래밍 경험이 없는 사람들을 위해 쓰여졌습니다. 프로그래밍에 대한 경험이 있으시다면 각 장마다 요약된 내용을 읽어보고 헷갈리는 내용이 있거나 할때 그 장 전체를 읽는 것을 추천드립니다.
+
+프로그래밍 경험이 없다면 독자 분이 알고 싶은 것을 자습서가 알려주길 바라고 있습니다. 아마도 당장 게임을 만들어 보고 싶으실 건데요, 조금만 더 기다리셨으면 좋을 것 같습니다. 게임 만들기를 시작하기 전에 알아야 할 개념들이 많이 있습니다. 그리고 이 개념들을 완전히 이해하기까지는 시간이 좀 걸릴 수도 있습니다. 이 자습서를 읽다 보면 내용을 이해하지 못할 가능성이 큽니다. 그럴 때는 질문을 하고(아래를 확인하여) 완전히 이해하지 못해도 계속 자습서를 읽어나가시는 것이 좋습니다. 12장에서는 8장에서 설명한 내용을 이해하게 될 것입니다. 어쨌거나, 이해하기 어려운 내용이 있어도 좌절하지 말고 오랜 시간을 들이시는 것이 좋습니다.
+
+독자 분이 넘기고 싶은 부분이 있으실 때는 그렇게 하시는 것을 권합니다. 이는 이 자습서가 독자 분에게 아직 가르쳐드리지 않은 것들을 시험해보도록 하는 것을 의미합니다. 독자 분이 이미 알고 있는 것들을 가지고 놀고, 알고 싶은 것들을 찾아보시기 바랍니다. 이것은 좋은 연습을 만들어 주고, 결국 그것은 독자 분이 필요로 하는 것입니다. 독자 분은 그림에 대해 원하는 모든 것을 읽을 수 있지만, 배우려면 스스로 그려야 할 것입니다. 프로그래밍도 마찬가지입니다.
+
+일부 장은 이전 장의 코드를 재사용할 것입니다. 이 경우, 장의 제일 위에 표시를 해두겠습니다.
+
+저자는 이 자습서를 다 작성하지 않았기 때문에 아직 새로운 장이 더 나올 수 있지만 언제 작업을 다시 시작할지에 대한 구체적인 계획은 없습니다.
+
+궁금한 점이나 개선점, 그 외 하실 말씀이 있으시면 언제든지 댓글 남겨주시면 최대한 빠른 시일 내에 답변 드리도록 하겠습니다. [여기](https://discord.gg/MHtXaxQ)에서 도움을 요청하실 수도 있습니다.
+(번역자: 한글판에 대한 내용은 이슈 트래커에 남겨주시기 바랍니다.)
 
 ___
 
-Welcome to How to LÖVE. The tutorial that teaches you how to program games with LÖVE (aka Love2D). Written by me, Sheepolution. It's the tutorial that I wish was available when I started learning how to program.
+## 요약
 
-This tutorial is for people who want to learn how to program. You don't necessarily need to learn how to program to make a game. If you want to make a single simple game and not touch game development after that again, I recommend using a tool like Construct 2 or Game Maker.
-
-In this tutorial we will be using LÖVE. The reason for this is because LÖVE is very beginner friendly in terms of programming games, but provides the functionality to make professional 2D games. This makes it a great tool for both beginners and experienced users. [Here's a list](https://store.steampowered.com/curator/32659238-L%C3%96VE-Games/) of all the games on Steam that were made with LÖVE.
-
-Unlike Game Maker and Unity, LÖVE is a framework and not an engine. You will have to do everything with code. There is no built in level editor or anything. The plus side to this is that you will understand exactly what is going on and how it works, because you wrote it yourself. Your knowledge is also easier to transfer to other engines and frameworks. Because while every engine works differently, code always works the same.
-
-This tutorial is written for people without any programming experience. If you do have experience with programming, I recommend you at least read the summary of every chapter, and when it confuses you, you read the full chapter.
-
-If you *don't* have any experience in programming, I hope this tutorial will teach you what you want to know. You probably want to start making a game right away, but I'll have to ask of you to be patient. There are a lot of concepts surrounding programming that you will need to understand before you can start making a game. And it can take a while before you're fully grasping these concepts. There is a good chance that you will be reading this book and not fully understanding what you're reading. In that case my advice is to ask questions (see below) and perhaps to continue with the book, pretending that you know what is going on. Maybe at chapter 12 you're finally understanding what was explained in chapter 8. In any case, don't feel bad or dumb if you don't understand everything right away. Take your time. 
-
-When you feel like it, I encourage you to "skip ahead". With that I mean try out things that the book hasn't taught you yet. Play around with what you know already and look up things you want to know. This makes for some great practice and in the end that is what you need. You can read about painting all you want, but to learn you'll have to paint yourself. Same goes for programming.
-
-Some chapters will use code from the previous chapter. In that case I will point it out at the top of the chapter.
-
-I'm not done writing this tutorial, meaning there are still new chapters to be released, but I have no concrete plans for when that will happen.
-
-If you have any questions, improvements, or anything else to say, feel free to leave a comment behind, and I'll do my best to reply as soon as possible. You can also ask for help in the [LÖVE Discord server](https://discord.gg/MHtXaxQ).
+이 프로그래밍 자습서는 LÖVE를 사용한다. 왜냐하면 이는 입문자에게 매우 적합하기 때문이다.
 
 ___
 
-## Summary
+## 어떤 것들을 배우게 되나요?
 
-This is a programming tutorial that uses LÖVE because it's very easy for beginners.
-
-___
-
-## What will you be learning?
-
-Here are some gifs to give you an impression of what you're going to learn throughout this tutorial.
+여기에 있는 몇 가지 GIF 영상이 이 튜토리얼로 배울 내용에 대해 알려줍니다.
 
 ![](/images/book/14/demo.gif)
 

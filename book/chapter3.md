@@ -1,8 +1,8 @@
-# Chapter 3 - Functions
+# 3장 - 함수
 
-With functions, we can store pieces of code. This allows us to execute this code whenever we want. Functions are also known as `methods`.
+함수를 사용하면 코드의 일부분을 저장할 수 있습니다. 이를 통해 언제든지 이 코드를 실행할 수 있습니다. 함수를 메서드 라고도 합니다.
 
-There are 2 ways to create a function:
+함수를 만드는 방법은 두가지 입니다.
 
 ```lua
 example = function ()
@@ -10,30 +10,32 @@ example = function ()
 end
 ```
 
-and the more common way:
+그리고 더 일반적인 방법은 다음과 같습니다:
 
 ```lua
-function example()
+function example ()
 	print("Hello World!")
 end
 ```
 
-You start by writing the keyword `function`, followed by the name of the function. A function is a type of variable, so the same rules apply as when you name a variable. This function's name is `example`. After the name we put parentheses `()`. Now we can start typing the code we want to put inside our function. In this case, we put in `print("Hello World!")` When you're done you close the function with an `end`.
+먼저 `function`이라는 예약어를 적고 이어서 함수의 이름을 입력합니다. 함수는 변수의 종류이므로 변수의 이름을 지정할 때와 동일한 규칙이 적용됩니다. 따라서 위 함수의 이름은 `example`입니다. 그리고 이름 뒤에 괄호 `()`를 붙입니다. 이제 함수 안에 넣을 코드를 괄호 뒤쪽에 입력할 수 있습니다. 위 경우에는 `print(Hello World!)`를 입력합니다. 함수의 끝은 `end`로 표시합니다.
 
-Note that when you run the code, you'll see no "Hello World!" in your console, this is because we still have to execute the function. We execute a function like this:
+코드를 실행하면 콘솔에 "Hello World!"가 출력되지 않습니다. 이는 우리가 직접 함수를 실행해야하기 때문입니다. 다음과 같이 함수를 실행합니다:
+
 ```lua
 example()
 --Output: "Hello World!"
 ```
-You simply type the function's name, followed by parentheses. This is what we call a *function-call*.
+간단히 함수의 이름을 입력한 다음 괄호를 입력하면 됩니다. 이것이 바로 *함수 호출*이라고 부르는 것입니다.
 
 ___
 
-## Parameters
+## 매개변수
 
-Take a look at this code:
+다음 코드를 봅시다:
+
 ```lua
-function sayNumber(num)
+function sayNumber (num)
 	print("I like the number " .. num)
 end
 
@@ -50,20 +52,21 @@ print(num)
 --nil
 ```
 
+함수의 괄호 안에는 *매개변수*라고 부르는 것을 넣을 수 있습니다. 매개변수는 함수 내부에만 존재하는 임시 변수입니다. 이번에는 매개변수 `num`을 넣습니다. 이제 우리는 다른 변수들처럼 `num`을 사용할 수 있습니다.
 
-Inside the parentheses of the function we can put what we call *parameters*. Parameters are temporary variables that only exist inside the function. In this case we place the parameter `num`. And now we can use `num` like any other variable.
+함수를 여러 번 실행하면, 매번 다른 숫자로 실행합니다. 그래서 우리가 같은 문장을 사용할 때마다 다른 숫자로 출력합니다. 우리가 괄호 안에 넣은 숫자를 인수라고 합니다. 그래서 첫 번째 함수 호출에서 우리는 *인수* 15를 *매개변수* `num`에 전달했습니다.
+> 번역자: 매개변수는 함수로 넘어온 값을 받는 입장에서, 인수는 함수를 호출하는 입장에서 사용하는 단어라고 생각하시면 됩니다.
 
-We execute our function multiple times, each time with a different number. And thus each time we print the same sentence, but with a different number. The number we put inside the parentheses is what we call an argument. So in the first function-call, we *pass* the *argument* 15 to the *parameter* `num`.
-
-At the end of our code we print `num`, outside of our function. This gives us `nil`. This means that num has no value. It's not a number, or string, or function. It's nothing. Because like I said before, parameters are variables that are only available inside the function.
+코드의 마지막에서, 함수 밖에 있는 `num`을 출력합니다. 그러면 `nil`이 됩니다. 즉, `num`은 값이 없습니다. 숫자도 아니고 문자열도 아니고 함수도 아닙니다. 아무것도 아닙니다. 왜냐하면 앞에서 말했듯이 매개변수는 함수 안에서만 사용할 수 있는 변수이기 때문입니다.
 
 ___
 
-## Return
-Functions can return a value, which we can store inside a variable, for example. You can return a value by using the `return` keyword.
+## 반환
+
+함수는 변수에 저장할 수 있는 값이라면 `return` 예약어를 사용해서 반환할 수 있습니다.
 
 ```lua
-function giveMeFive()
+function giveMeFive ()
 	return 5
 end
 
@@ -72,13 +75,13 @@ print(a)
 --Output: 5
 ```
 
-`a` becomes the value that giveMeFive *returns*.
+`a`는 giveMeFive가 반환하는 값이 됩니다.
 
-Another example:
+또 다른 예시:
 
 ```lua
--- Multiple parameters and arguments are separated by a comma
-function sum(a, b)
+-- 여러개의 매개 변수와 인수는 콤마로 구분됩니다.
+function sum (a, b)
 	return a + b
 end
 
@@ -86,14 +89,16 @@ print(sum(200, 95))
 --Output:
 --295
 ```
-Our function `sum` *returns* the sum of `a` and `b`. We don't necessarily need to put the value our function returns in a variable first. We can directly print the value.
+함수 `sum`은 `a`와 `b`의 합을 반환합니다. 함수가 반환하는 값을 반드시 변수에 먼저 넣어야 할 필요는 없습니다. 반환하는 값을 바로 출력할 수 있습니다.
 
 ___
 
-## Usage
-Often you want to execute certain code in multiple locations. Instead of copying that code each time you want to use it, we can simply add a function call. And if we want to change the behaviour of this function, we only need to change it in one location, which is the function itself. This way we avoid repeating code. [Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), it's one of the most important programming principles.
+## 용법
+
+종종 특정 코드를 여러 위치에서 실행하려고 합니다. 코드를 사용하고 싶을 때마다 복사하는 대신 함수 호출을 추가하기만 하면 됩니다. 그리고 이 함수의 동작을 변경하려면 함수가 정의된(또는 대입된) 위치에서만 변경하면 됩니다. 이렇게 하면 코드가 반복되는 것을 피할 수 있습니다. [Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)는 가장 중요한 프로그래밍 원리 중 하나입니다.
 
 ___
 
-## Summary
-Functions can store code that we can execute at any time. We call a function by writing its name followed by parentheses. We can put values inside these parentheses. These values are passed to the function's parameters, which are temporary variables that only exist within the function. Functions can also return a value. Functions remove repetition and that is a good thing.
+## 요약
+
+함수는 코드를 저장하여 언제든지 실행할 수 있다. 함수의 이름 뒤에 괄호를 써서 함수를 호출할 수 있다. 괄호 안에 값을 넣을 수 있다. 이 값들은 함수의 매개변수로 전달되는데, 이 매개변수들은 함수 안에만 존재하는 임시 변수이다. 함수는 값을 반환할 수도 있다. 함수는 반복을 제거하고 이는 중요한 프로그래밍 기술이다.

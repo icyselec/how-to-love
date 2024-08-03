@@ -1,33 +1,33 @@
-# Chapter 2 - Variables
-With programming we can do arithmetics.
+# 2장 - 변수
+프로그래밍으로 산수를 할 수 있습니다.
 
-What is 3 + 4?
+3 + 4는 뭘까요?
 
-*It's 7!*
+7이죠!
 
-Okay well let's test that. We can use `print` to make the number appear in our output console.
+자 그럼 확인해봅시다. `print`를 사용하면 계산 결과가 나타납니다.
 
 ```lua
 print(3 + 4)
---Output: 7
+--결과: 7
 ```
 
-Run your code (meaning press F6 and then close the window to show the output) and your console should say `7`.
+코드를 실행하세요, (이 말은 `F6` 키를 누르고 창을 닫아서 출력 결과를 확인하라는 말입니다.) 그리고 콘솔에서는 `7`을 출력해야 합니다.
 
-Cool! Now what is a + b?
+데단해요! 그럼 a + b는 뭘까요?
 
-*Uhm...*
+*음...*
 
-Well it could be anything. That's because "a" and "b" don't have a value. Let's change that.
+*뭐...* 든 될 수 있습니다. "a"와 "b"는 값을 갖지 않기 때문입니다. 값을 한번 바꿔볼까요?
 
 ```lua
 a = 5
 b = 3
 ```
 
-Let's take another look, what is a + b? What we're really asking is "What is the value of a + the value of b?". In other words, what is 5 + 3? Which is 8.
+다시 한 번 살펴봅시다, a + b는 뭘까요? 실제로 묻고 있는 것은 "a의 값과 b의 값을 더한 값은 무엇인가요?" 입니다. 그러니까, 5 + 3은 뭔가요? 8은 어떤 건가요.
 
-To prove that a + b = 8, we're going to print it.
+a + b = 8임을 증명하기 위해, 이를 출력할 것입니다.
 
 ```lua
 a = 5
@@ -36,35 +36,36 @@ print(a + b)
 --Output: 8
 ```
 
-Run your code again.
+코드를 다시 실행하세요.
 
-Here `a` and `b` are what we call *variables*. A variable is a word in which you can store a value. The number 3 is always 3, and 7 is always 7, but a variable can be anything you want it to be. Hence the name variable.
+여기서 `a`와 `b`는 *변수*라고 부르는 것입니다. 변수는 어떤 값을 저장할 수 있는 단어입니다. 숫자 3은 항상 3이고, 7은 항상 7이지만, 변수는 원하는 어떤 것이든 될 수 있습니다. 따라서 변수라는 이름이 붙었습니다.
 
-The word in which you store a value can be almost anything.
+단어에 저장할 수 있는 값은 거의 모든 것이 될 수 있습니다.
 ```lua
-sheep = 3
+sheep = -32768
 test = 20
 PANTS = 1040
 asdfghjkl = 42
 ```
 
-Variables are *case-sensitive*. That means that when you have the same word, but with different casing, it's not treated as the same. For example
+변수는 대소문자를 구분합니다. 이는 같은 단어라도 대소문자의 여부에 따라 같지 않을 수도 있다는 겁니다. 예를 들어,
 ```lua
 sheep = 3
 SHEEP = 10
 sHeEp = 200
 ```
-are three different variables, with each their own value.
 
-You can do more than just summing up numbers.
+3개 모두 다른 변수입니다. 각자 고유의 값을 가지고 있습니다.
+
+덧셈 말고도 할 수 있는게 많습니다.
 ```lua
-a = 20 - 10 --Subtraction
-b = 20 * 10 --Multiplication
-c = 20 / 10 --Division
-d = 20 ^ 10 --Exponentiation
+a = 20 - 10 --뺄셈
+b = 20 * 10 --곱셈
+c = 20 / 10 --나눗셈
+d = 20 ^ 10 --지수
 ```
-For numbers with decimals we use a dot.
 
+소수점이 있는 숫자의 경우, 점(.)을 사용합니다.
 ```lua
 a = 10.4
 b = 2.63
@@ -72,15 +73,14 @@ c = 0.1
 pi = 3.141592
 ```
 
-Take a look at the following code:
-
+이제, 다음 코드를 살펴봅시다:
 ```lua
 X = 5
 Y = 3
 Z = X + Y
 ```
 
-First we say `X = 5`. When we give a variable a value, we call that an *assignment*. We *assign* 5 to `X`, and 3 to `Y`. Next we assign `X + Y` to `Z`. So now `Z` equals 8. Remember that you can always check the value of a variable with `print`. If we were to change the value of `X` or `Y` after `Z = X + Y`, it would not affect `Z`. It would still be 8.
+먼저 `X = 5`라고 합니다. 변수에 값을 넣을 때는 *대입*이라고 합니다. `X`에 5를 *대입*하고, `Y`에 3을 *대입*합니다. 다음으로 `Z`에 `X + Y`를 *대입*합니다. `Z`는 8이 됩니다. 기억하세요, `print`를 사용하면 변수의 값을 확인할 수 있습니다. `Z = X + Y` 이후에 `X` 또는 `Y`의 값을 바꾼다고 해도 `Z`에는 영향이 없습니다. 여전히 8입니다.
 
 ```lua
 X = 5
@@ -91,38 +91,41 @@ Y = 40
 print(Z)
 --Output: 8
 ```
-This is because to the computer `Z` is not `X + Y`, it's simply 8.
+왜냐하면 `Z`를 출력하라고 했지 `X + Y`를 출력하라고 한 건 아니기 때문에 8입니다.
 
 ___
-## Strings
-A variable can also store text.
-```lua
-text = "Hello World!"
-```
-This is what we call a *string*. Because it's a string of characters.
+## 문자열
+변수는 문자도 저장할 수도 있습니다.
 
-We can connect strings by using two dots (..)
 ```lua
-name = "Daniel"
-age = "25"
-text = "Hello, my name is " .. name .. ", and I'm " .. age .. " years old."
+text = "안녕, 세계!"
+```
+이것은 우리가 *문자열*이라고 부르는 것입니다. 왜냐하면 이는 문자의 연속이기 때문입니다.
+> 번역자: 숫자의 연속을 숫자열, 기호의 연속을 기호열이라고 부르는 것과 비슷합니다.
+
+
+두개의 점(..)을 사용하여 문자열을 연결할 수 있습니다.
+```lua
+name = "STKM"
+age = "13"
+text = "안녕, 내 이름은 " .. name .. "이고, 나이는 " .. age .. " 살이야."
 print(text)
---Output: "Hello, my name is Daniel, and I'm 25 years old."
+--Output: "안녕, 내 이름은 STKM 이고, 나이는 13 살이야."
 ```
 ___
 
-## Variable naming rules
-There are a few rules when naming a variable. First of all, your variable may have a number in it, but not at the start.
+## 올바른 변수 이름 짓기
+변수의 이름을 지을 때 몇가지 규칙이 있습니다. 우선, 변수에는 숫자가 포함될 수 있지만 처음부터 나올 수는 없습니다.
 
 ```lua
-test8 --Good
-te8st --Good
-8test --Bad, error!
+tast0y --굳
+t0asty --굳
+0tasty --밷, 오류를 뱉어냄!
 ```
 
-Your variable name also can't include any special characters like @#$%^&*.
+변수의 이름에는 @#$%^&*와 같은 특수 문자도 포함할 수 없습니다.
 
-And finally, your variable name can't be a keyword. A keyword is a word that the programming language uses. Here's a list of keywords:
+마지막으로, 변수의 이름은 예약어가 될 수 없습니다. 예약어는 프로그래밍 언어에서 이미 사용하고 있는 단어입니다. 여기에 그 목록이 있습니다.
 
 ```nil
 and       break     do        else      elseif
@@ -133,11 +136,11 @@ repeat    return    then      true      until     while
 
 ___
 
-## Usage
+## 용법
 
-Variables can be used to keep track of things. For example, we can have the variable `coins`, and every time we pick up a coin we can do `coins = coins + 1`.
+변수는 일을 추적하는 데 사용될 수 있습니다. 예를 들어, 우리는 `coins`이라는 변수를 가질 수 있고, 동전을 집을 때마다 `coins = coins + 1`로 값을 증가시킬 수 있습니다.
 
 ___
 
-## Summary
-Variables are words in which we can store a value like a number or text. You can name them whatever you want, with a few exceptions. Variables are case-sensitive.
+## 요약
+변수는 숫자나 문자와 같은 값을 저장할 수 있는 단어입니다. 몇 가지 예외를 제외하고 원하는 대로 이름을 지을 수 있습니다. 변수는 대소문자를 구분합니다.
