@@ -62,7 +62,6 @@ print(test(10, 20))
 
 ___
 
-
 ## LÖVE는 어떻게 작동하는 거죠?
 
 ___
@@ -78,10 +77,10 @@ LÖVE는 3개의 함수를 호출합니다. 먼저 `love.load`를 호출합니�
 
 그러므로, 처음에는 `love.load`를 호출하고, `love.update`와 `love.draw`를 반복해서 호출합니다.
 
-Behind the scenes, LÖVE calls these functions, and we to create them, and fill them with code. This is what we call a *callback*.
+
 눈에 보이지 않는 부분에서는 LÖVE가 이 함수들을 호출하고, 우리는 이것을 작성하고 코드로 채웁니다. 이를 *콜백 함수*라고 부릅니다.
 
-LÖVE는 `love.graphics`, `love.audio`, `love.filesysteme`등의 *모듈*로 만들어집니다. 모듈이 15개 정도 되는데, 각 모듈은 하나의 일을 잘합니다. 컴퓨터로 그림을 그리는 모든 것은 love.graphics로 합니다. 그리고 컴퓨터로 음악 재생은 love.audio로 합니다.
+LÖVE는 `love.graphics`, `love.audio`, `love.filesysteme`등의 *모듈*로 만들어집니다. 모듈이 15개 정도 되는데, 각 모듈은 하나의 일을 잘합니다. 컴퓨터로 그림을 그리는 모든 것은 `love.graphics`로 합니다. 그리고 컴퓨터로 음악 재생은 `love.audio`로 합니다.
 
 지금은 `love.graphics` 모듈에 초점을 맞추겠습니다.
 
@@ -100,10 +99,9 @@ LÖVE는 모든 함수에 대한 설명이 있는 [위키](https://www.love2d.or
 따라서, 속이 채워진 사각형을 그리려면 다음과 같이 하면 됩니다.
 ```lua
 function love.draw ()
-	love.graphics.rectangle("fill", 100, 200, 50, 80)
+	love.graphics.rectangle('fill', 100, 200, 50, 80)
 end
 ```
-> 번역자: 이 코드는 캔버스의 (100, 200) 지점에 가로 50, 세로 80 픽셀의 크기를 가진 속이 채워진 사각형을 그립니다.
 
 이제 게임을 실행하면, 속이 채워진 사각형이 표시됩니다.
 
